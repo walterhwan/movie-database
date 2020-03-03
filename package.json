@@ -1,5 +1,6 @@
 {
   "name": "movie_database",
+  "homepage": "https://walterhwan.github.io/movies",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,11 +8,14 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "dotenv": "^8.2.0",
+    "gh-pages": "^2.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-query": "^1.0.10",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "scripts": {
     "start": "react-scripts start",
