@@ -1,13 +1,12 @@
-const token = localStorage.getItem('API_TOKEN')
-
+const IEN39SN = process.env.REACT_APP_IEN39SN
 const BASE_URL = 'https://api.themoviedb.org/3'
 
 function request(url, options = {}) {
-  return fetch(url, {
+  return fetch(`${url}?api_key=${IEN39SN}`, {
     ...options,
-    headers: {
-      'Authorization': `Bearer ${token}`
-    }
+    // headers: {
+    //   'Authorization': `Bearer ${token}`
+    // }
   }).then(response => response.json())
 }
 

@@ -25,6 +25,11 @@ a:hover { color:blue; }
   background-color: #282c34;
 }
 
+.mv-db-logo {
+  position: absolute;
+  width: 150px;
+}
+
 h1 {
   font-size: 40px;
 }

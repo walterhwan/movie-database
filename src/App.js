@@ -9,6 +9,7 @@ import {
 } from './moviedbApi'
 import { extractTVProps, extractMovieProps } from './helper'
 
+import movieDbLogo from './movie_db.png'
 import './App.css'
 
 function TV({ tvId }) {
@@ -160,6 +161,7 @@ function TredingMovie() {
 function App() {
   return (
     <div className="app">
+      <img className="mv-db-logo" src={movieDbLogo} alt="movie_db_logo"/>
       <TrendingTV />
       <TredingMovie />
     </div>
