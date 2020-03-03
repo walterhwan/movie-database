@@ -1,6 +1,6 @@
 {
   "name": "movie_database",
-  "homepage": "https://walterhwan.github.io/movies",
+  "homepage": "https://walterhwan.github.io/movie-database",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
