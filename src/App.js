@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { useQuery } from 'react-query'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css'
+
+const token = ''
+
+const getMovie = (id) => {
+  const url = 'https://api.themoviedb.org/3/movie'
+  if (!id) return { error: 'No movie ID' }
+  return fetch(`${url}/${id}`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  }).then(response => response.json())
 }
 
-export default App;
+function App() {
+  const [movieId, setMovieId] = React.useState('76341')
+  const { status, data, error } = useQuery([movieId], getMovie)
+
+  const handleOnChange = (event) => {
+    setMovieId(event.target.value)
+  }
+
+  return (
+    <div className="app">
+      <p>Enter the movie Id</p>
+      <input value={movieId} onChange={handleOnChange}></input>
+      {status === 'loading' ? (
+        <p>loading...</p>
+      ) : status === 'error' ? (
+        <p>Error: {error.message}</p>
+      ) : (
+        <p>{data.original_title}</p>
+      )}
+    </div>
+  )
+}
+
+export default App
