@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 p {
   display: block;
   margin-block-start: 0px;
@@ -16,18 +20,40 @@ a:hover { color:blue; }
 
 .app {
   min-height: 100%;
-  width: 1400px;
+  width: 700px;
   display: flex;
   margin: 0 auto;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   color: white;
   background-color: #282c34;
 }
 
+.head {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5px;
+  background-color: #33363d;
+}
+
+.select-list {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.selection {
+  font-size: 18px;
+}
+
 .mv-db-logo {
-  position: absolute;
-  width: 150px;
+  width: 100px;
 }
 
 h1 {
@@ -36,25 +62,26 @@ h1 {
 
 .trending-tv {
   display: flex;
-  width: 50%;
+  width: 100%;
   flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 .trending-movie {
   display: flex;
-  width: 50%;
+  width: 100%;
   flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 .tv {
   display: flex;
-  width: 95%;
+  width: 100%;
   flex-direction: row;
-  /* width: 700px; */
   text-align: start;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   padding: 5px;
   background-color: #33363d;
 }
